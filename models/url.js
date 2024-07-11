@@ -3,13 +3,13 @@ const Sequelize = require('sequelize');
 class Url extends Sequelize.Model { 
   static initiate(sequelize) { 
     Url.init({
-      origin_url: {
+      long_url: {
         type: Sequelize.STRING(255),
         allowNull: false,
       },
       short_url: {
         type: Sequelize.STRING(255),
-        allowNull: false,
+        allowNull: true,
       },
     }, {
       sequelize,
@@ -18,8 +18,8 @@ class Url extends Sequelize.Model {
       paranoid: false, 
 			modelName: 'Url',
       tableName: 'url', 
-      charset: 'uft8',
-      collate: 'uft8_general_ci'
+      charset: 'utf8',
+      collate: 'utf8_general_ci'
     });
   }
 };
